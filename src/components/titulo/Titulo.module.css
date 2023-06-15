@@ -1,7 +1,12 @@
-.titulo {
-   width: 35%;
+.img {
+   width: 100%;
+   transform: translate(0px, -30px);
 }   
 
+.titulo {
+    display: flex;
+    width: 20em;
+}
 
 .titulo:hover{
     animation-name: shake;
