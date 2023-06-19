@@ -21,4 +21,12 @@
         width: 50px;
     }
  }
+
+ .home {
+    width: 40px ;
+    
+    &:hover {
+        width: 50px;
+    }
+ }
  

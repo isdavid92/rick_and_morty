@@ -4,8 +4,8 @@
     border-radius: 10px;
     padding: 8px;
     width: 250px;
-    height: 33em;
-    transform: translatey(-40px);
+    height: 27em;
+    transform: translatey(-20px);
 }
 
 .img {
@@ -32,7 +32,7 @@
 }
 
 .info {
-    transform: translateY(-30px);
+    transform: translateY(-25px);
 }
 
 @font-face {
@@ -48,4 +48,9 @@
 
 .textInfo {
     margin: 5px;
+}
+
+.NavLink {
+    color: inherit;
+    text-decoration: none;
 }

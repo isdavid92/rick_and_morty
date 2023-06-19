@@ -3,7 +3,11 @@ import { useState } from 'react';
 import Cards from './components/Cards/Cards';
 import Titulo from './components/titulo/Titulo';
 import Nav from './components/Nav/Nav';
+import Detail from "./components/Detail/Detail";
+import About from "./components/About/About";
 import axios from "axios";
+import { Routes, Route } from "react-router-dom";
+import Error404 from './components/Error404/Error404';
 
 function App() {
    const [ characters, setCharacters ] = useState([])
@@ -11,7 +15,7 @@ function App() {
    const onSearch = (id) => {
       if(!id) alert('Ingresa un ID')
       if(characters.find(char => char.id === parseInt(id) )){
-        alert(`Ya existe el personaje con el id ${id}`)
+        alert(`Ya existe el personaje con el id ${id}`);
         return;
       }
      axios(`https://rickandmortyapi.com/api/character/${id}`)
@@ -45,7 +49,13 @@ function App() {
             <Titulo/>
             <Nav onSearch ={onSearch} onRandom={onRandom}/>
          </div>
-         <Cards characters={characters} onClose={onClose}/>
+         <Routes>
+            <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}>
+            </Route>
+            <Route path='/about' element={<About/>}/>
+            <Route path='/detail/:id' element={<Detail/>}/>
+            <Route path='*' element={<Error404/>}/>
+         </Routes>
       </div>
    );
 }

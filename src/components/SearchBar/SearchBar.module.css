@@ -26,7 +26,6 @@
     font-weight: 700;
     font-size: 1em;
     transform-style: preserve-3d;
-    transform: translate(-15px) rotateX(20deg);
     &:hover {
         background-color: #011387;
         cursor: pointer;
