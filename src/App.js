@@ -21,7 +21,7 @@ function App() {
      axios(`https://rickandmortyapi.com/api/character/${id}`)
      .then(({data}) => {
         if(data.name){
-          setCharacters((oldChars)=> [...oldChars, data])
+          setCharacters((oldChars)=> [data, ...oldChars])
         }
      }).catch(
       // err => alert(err.response.data.error)
@@ -35,7 +35,7 @@ function App() {
       axios(`https://rickandmortyapi.com/api/character/${idRandom}`)
      .then(({data}) => {
         if(data.name){
-          setCharacters((oldChars)=> [...oldChars, data])
+          setCharacters((oldChars)=> [data, ...oldChars])
         }
      })
     }
@@ -43,11 +43,16 @@ function App() {
     function onClose(id){
       setCharacters(characters.filter(char => char.id !== id))
     }
+
+    function onClearn() {
+      setCharacters([])
+    }
+
    return (
       <div className={style.App}>
          <div className={style.navTit}>
             <Titulo/>
-            <Nav onSearch ={onSearch} onRandom={onRandom}/>
+            <Nav onSearch ={onSearch} onRandom={onRandom} onClearn={onClearn}/>
          </div>
          <Routes>
             <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}>

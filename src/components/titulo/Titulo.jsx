@@ -1,10 +1,13 @@
 import style from './Titulo.module.css';
-import img from './img/rym.png'
+import img from './img/rym.png';
+import { Link } from "react-router-dom";
 
 const Titulo = function () {
     return(
         <div className={style.titulo}>
-            <img src={img} alt="RyM" className={style.img}/>
+            <Link to={"/home"}>
+                <img src={img} alt="RyM" className={style.img}/>
+            </Link>
         </div>
     )
 }
