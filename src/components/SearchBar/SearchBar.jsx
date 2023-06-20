@@ -8,9 +8,16 @@ export default function SearchBar({onSearch}) {
    function handleChange (event) {
       setId(event.target.value)
    }
+
+   function handleKeyPress(event) {
+      if (event.key === 'Enter') {
+        onSearch(id);
+      }
+   }
+
    return (
       <div className={style.DivSearch}>
-         <input type='search' className={style.Input} onChange={handleChange} placeholder='Ingrese un ID...'/>
+         <input type='search' onKeyPress={handleKeyPress} className={style.Input} onChange={handleChange} placeholder='Ingrese un ID...'/>
          <NavLink to={'/home'}>
             <button onClick={() => onSearch(id)} className={style.Btn}>Agregar</button>
          </NavLink>

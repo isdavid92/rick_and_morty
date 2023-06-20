@@ -13,16 +13,16 @@ const Nav = function (props) {
        <nav className={style.nav}>
         <div className={style.divRandom}>
             <Link to={"/home"}>
-                <img src={imgClearn} alt="" onClick={() => onClearn()} className={style.clearn}/>
+                <img title='Borrar todas las tarjetas' src={imgClearn} alt="" onClick={() => onClearn()} className={style.clearn}/>
             </Link>
             <Link to={"/home"}>
-                <img src={imgHome} alt="" className={style.home}/>
+                <img title='Home' src={imgHome} alt="" className={style.home}/>
             </Link>
             <Link to={"/about"}>
-                <img src={imgAbout} alt="" className={style.about}/>
+                <img title='Informacion de esta App' src={imgAbout} alt="" className={style.about}/>
             </Link>
             <Link to={"/home"}>
-                <img src={imgRandom} alt="random" onClick={() => onRandom()} className={style.random}/>
+                <img title='Mostrar cualquier tarjeta' src={imgRandom} alt="random" onClick={() => onRandom()} className={style.random}/>
             </Link>
         </div>
         <SearchBar onSearch={props.onSearch}/>

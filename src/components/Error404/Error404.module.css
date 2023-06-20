@@ -1,0 +1,12 @@
+.Error404 {
+    background: rgba(255, 255, 255, 0.4);
+    margin: 1em;
+    padding: 1em;
+    border-radius: 10px;
+    height: auto;
+}
+
+.gif {
+    width: 100%;
+    border-radius: 5px;
+}
