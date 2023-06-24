@@ -11,3 +11,10 @@
    display:flex;
    width: auto;
 }
+
+.saludo {
+   color: white;
+   font-family: numeros;
+   position: absolute;
+   top: 11.5%;
+}

@@ -1,16 +1,47 @@
 import style from './App.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Cards from './components/Cards/Cards';
+import Form from './components/Form/Form';
 import Titulo from './components/titulo/Titulo';
 import Nav from './components/Nav/Nav';
 import Detail from "./components/Detail/Detail";
 import About from "./components/About/About";
 import axios from "axios";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Error404 from './components/Error404/Error404';
 
 function App() {
-   const [ characters, setCharacters ] = useState([])
+   const { pathname } = useLocation();
+   const navigate = useNavigate();
+   const [ characters, setCharacters ] = useState([]);
+   const [ access, setAccess ] = useState(false);
+   const EMAIL = 'isdavid92@hotmail.com';
+   const PASSWORD = 'admin123';
+   const [ nombre, setNombre ] = useState('');
+
+   const login = ({ email, password }) => {
+      if (email===EMAIL && password===PASSWORD) {
+         setAccess(true);
+         navigate('/home');
+         setNombre('Isra');
+         setCharacters([])
+      }
+   }
+
+   const Invitado = () => {
+      setAccess(true);
+      navigate('/home');
+      setNombre('Invitado');
+      setCharacters([])
+   }
+
+   useEffect(() => {
+      !access && navigate('/');
+   }, [access]);
+
+   const logOut = () => {
+      setAccess(false);
+   }
 
    const onSearch = (id) => {
       if(!id) alert('Ingresa un ID')
@@ -50,13 +81,20 @@ function App() {
 
    return (
       <div className={style.App}>
-         <div className={style.navTit}>
-            <Titulo/>
-            <Nav onSearch ={onSearch} onRandom={onRandom} onClearn={onClearn}/>
-         </div>
+
+            { pathname !== '/' &&
+            <>
+               <div className={style.navTit}>
+                  <Titulo/>
+                  <Nav onSearch ={onSearch} onRandom={onRandom} onClearn={onClearn} onLogOut={logOut}/>
+               </div>
+               { pathname == '/home' && <h1 className={style.saludo}>¡ hola {nombre} !</h1> }
+            </>
+            }
+         
          <Routes>
-            <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}>
-            </Route>
+            <Route path='/' element={<Form login={login} Invitado={Invitado}/>}/>
+            <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
             <Route path='/about' element={<About/>}/>
             <Route path='/detail/:id' element={<Detail/>}/>
             <Route path='*' element={<Error404/>}/>

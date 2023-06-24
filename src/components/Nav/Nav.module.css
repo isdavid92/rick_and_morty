@@ -9,10 +9,31 @@
     padding: 10px 30px 10px 10px;
     margin: 20px 20px 0px 20px;
  }
+
+ .logOut {
+    width: 38px ;
+    margin-left: 2em;
+    margin-right: 2em;
+
+    &:hover {
+        width: 48px;
+    }
+ }
  
- .random {
+ .clearn {
     width: 40px ;
     margin-left: 2em;
+    margin-right: 2em;
+
+    &:hover {
+        width: 50px;
+    }
+ }
+
+ .home {
+    width: 40px ;
+    margin-left: 2em;
+    margin-right: 2em;
     
     &:hover {
         width: 50px;
@@ -29,20 +50,9 @@
     }
  }
 
- .home {
+ .random {
     width: 40px ;
     margin-left: 2em;
-    margin-right: 2em;
-    
-    &:hover {
-        width: 50px;
-    }
- }
- 
- .clearn {
-    width: 40px ;
-    margin-left: 2em;
-    margin-right: 2em;
     
     &:hover {
         width: 50px;
