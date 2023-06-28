@@ -12,8 +12,8 @@
 
  .logOut {
     width: 38px ;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
 
     &:hover {
         width: 48px;
@@ -22,8 +22,8 @@
  
  .clearn {
     width: 40px ;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
 
     &:hover {
         width: 50px;
@@ -32,8 +32,8 @@
 
  .home {
     width: 40px ;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
     
     &:hover {
         width: 50px;
@@ -42,8 +42,8 @@
 
  .about {
     width: 40px ;
-    margin-left: 2em;
-    margin-right: 2em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
     
     &:hover {
         width: 50px;
@@ -52,7 +52,17 @@
 
  .random {
     width: 40px ;
-    margin-left: 2em;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    
+    &:hover {
+        width: 50px;
+    }
+ }
+
+ .favoritos {
+    width: 40px ;
+    margin-left: 1.5em;
     
     &:hover {
         width: 50px;

@@ -5,6 +5,7 @@ import imgClearn from './img/clearn.png'
 import imgHome from './img/home.png';
 import imgAbout from './img/about.png';
 import imgRandom from './img/random.png';
+import imgFavoritos from './img/favoritos.png'
 import { Link } from "react-router-dom";
 
 const Nav = function (props) {
@@ -27,6 +28,9 @@ const Nav = function (props) {
             </Link>
             <Link to={"/home"}>
                 <img title='Mostrar cualquier tarjeta' src={imgRandom} onClick={() => onRandom()} className={style.random}/>
+            </Link>
+            <Link to={"/favorites"}>
+                <img title='Mis favoritos' src={imgFavoritos} className={style.favoritos}/>
             </Link>
         </div>
         <SearchBar onSearch={props.onSearch}/>

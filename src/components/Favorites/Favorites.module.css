@@ -1,0 +1,8 @@
+.divFav {
+    text-align: center;
+   background-size: contain;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   padding: 10px;
+}

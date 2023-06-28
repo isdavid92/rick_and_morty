@@ -1,14 +1,43 @@
 import style from './Card.module.css';
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import { addFav, removeFav } from '../../redux/actions';
+import { connect } from 'react-redux';
+import { useState, useEffect } from 'react';
+import imgFavDest from "./img/favoritos_dest.png";
+import imgFavGris from './img/favoritos_gris.png';
 
 function Card(props) {
    const onClose = props.onClose;
+   const [ isFav, setIsFav ] = useState(false);
+   const { pathname } = useLocation();
+
+   useEffect(() => {
+      props.myFavorites.forEach(per => {
+         if (per.id===props.id) setIsFav(true)
+      })
+   },[])
+
+   const handleFavorite = () => {
+      if (isFav) {
+         setIsFav(false);
+         props.removeFav(props.id)
+      } else {
+         setIsFav(true)
+         props.addFav(props)
+      }
+   };
+
    return (
       <div className={style.card}>
          
          <div className={style.info}>
             <div className={style.close}>
-               <button onClick={()=> onClose(props.id)} className={style.boton}> <strong>X</strong></button>
+               {
+                  isFav? <img src={imgFavDest} className={style.favDest} onClick={handleFavorite}/> : <img src={imgFavGris} className={style.favGris} onClick={handleFavorite}/>
+                  }
+               {
+                  pathname === '/home' && <button onClick={()=> onClose(props.id)} className={style.boton}> <strong>X</strong></button>
+               }
             </div>
             
              <NavLink className={style.NavLink} to={`/detail/${props.id}`}>
@@ -22,4 +51,22 @@ function Card(props) {
    );
 }
 
-export default Card;
+const mapStateToProps = (state) => {
+   return {
+      myFavorites: state.myFavorites
+   }
+}
+
+
+const mapDispatchToProps = (dispatch) => {
+   return{
+      addFav: (pers) => {
+         dispatch(addFav(pers))
+      },
+      removeFav: (id) => {
+         dispatch(removeFav(id))
+      }
+   }
+}
+
+export default connect (mapStateToProps, mapDispatchToProps)(Card)
