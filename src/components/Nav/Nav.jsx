@@ -15,7 +15,7 @@ const Nav = function (props) {
 
     return (
        <nav className={style.nav}>
-        <div className={style.divRandom}>
+        <div className={style.divBotones}>
             <img title='Cerrar sesion' src={imgLogOut} onClick={() => logOut()} className={style.logOut}/>
             <Link to={"/home"}>
                 <img title='Borrar todas las tarjetas' src={imgClearn} onClick={() => onClearn()} className={style.clearn}/>

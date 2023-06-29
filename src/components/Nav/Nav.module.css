@@ -9,62 +9,70 @@
     padding: 10px 30px 10px 10px;
     margin: 20px 20px 0px 20px;
  }
+ .divBotones {
+    transform: translateY(-17px);
+ }
 
  .logOut {
     width: 38px ;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    position: absolute;
+    transform: translateX(-27.5em);
 
     &:hover {
-        width: 48px;
+        width: 45px;
     }
  }
  
  .clearn {
     width: 40px ;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    position: absolute;
+    transform: translateX(-22em) translateY(-2px);
 
     &:hover {
-        width: 50px;
+        width: 45px;
     }
  }
 
  .home {
     width: 40px ;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    position: absolute;
+    transform: translateX(-16.5em);
+
     
     &:hover {
-        width: 50px;
+        width: 45px;
     }
  }
 
  .about {
-    width: 40px ;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    width: 38px ;
+    position: absolute;
+    transform: translateX(-11em) translateY(-2px);
+
     
     &:hover {
-        width: 50px;
+        width: 43px;
     }
  }
 
  .random {
     width: 40px ;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    position: absolute;
+    transform: translateX(-5.5em);
+
     
     &:hover {
-        width: 50px;
+        width: 45px;
     }
  }
 
  .favoritos {
-    width: 40px ;
-    margin-left: 1.5em;
+    width: 38px ;
+    position: absolute;
+    
+
     
     &:hover {
-        width: 50px;
+        width: 43px;
     }
  }

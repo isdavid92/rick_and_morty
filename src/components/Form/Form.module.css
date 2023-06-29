@@ -4,10 +4,6 @@
     position: absolute;
     top: -3%;
     left: 6.2%;
-    transform: translate();
-}
-
-.titulo:hover{
     animation-name: shake;
         -webkit-animation-name: shake;
         -moz-animation-name: shake;

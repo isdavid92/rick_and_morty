@@ -15,6 +15,7 @@ function About () {
                 <div className={style.divTitulo}>
                     <img className={style.titulo} src={titulo} alt="" />
                 </div>
+            
                 <div className={style.divIsra}>
                     <h1>creada por:</h1>
                     <div className={style.nomIsra}>

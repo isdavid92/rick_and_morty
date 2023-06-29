@@ -90,6 +90,7 @@ function App() {
                   <Nav onSearch ={onSearch} onRandom={onRandom} onClearn={onClearn} onLogOut={logOut}/>
                </div>
                { pathname == '/home' && <h1 className={style.saludo}>¡ hola {nombre} !</h1> }
+               { pathname == '/favorites' && <h1 className={style.favoritos}>Mis favoritos:</h1> }
             </>
             }
          
