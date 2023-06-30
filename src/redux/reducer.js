@@ -22,10 +22,18 @@ const reducer = (state = inicialState, { type, payload }) => {
             }
 
         case FILTER:
-            return {
+            if ( payload==="todos" ) {
+                return {
                 ...state,
                 allCharacters: [...state.allCharacters],
+                myFavorites: [...state.allCharacters]
+                }
+            } else {
+                return {
+                    ...state,
+                allCharacters: [...state.allCharacters],
                 myFavorites: state.allCharacters.filter(per => per.gender === payload)
+                }
             }
 
         case ORDER:

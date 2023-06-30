@@ -111,6 +111,7 @@ function App() {
                            <h2 className={style.filtrar}>Filtrar:</h2>
                            <div className={style.divSelect}>
                               <select className={style.selectGen} onChange={handleFilter}>
+                                 <option value='todos'>Todos</option>
                                  <option value='Male'>Male</option>
                                  <option value='Female'>Female</option>
                                  <option value='Genderless'>Genderless</option>
