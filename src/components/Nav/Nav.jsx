@@ -16,24 +16,36 @@ const Nav = function (props) {
     return (
        <nav className={style.nav}>
         <div className={style.divBotones}>
-            <img title='Cerrar sesion' src={imgLogOut} onClick={() => logOut()} className={style.logOut}/>
-            <Link to={"/home"}>
-                <img title='Borrar todas las tarjetas' src={imgClearn} onClick={() => onClearn()} className={style.clearn}/>
-            </Link>
-            <Link to={"/home"}>
-                <img title='Home' src={imgHome} className={style.home}/>
-            </Link>
-            <Link to={"/about"}>
-                <img title='Informacion de esta App' src={imgAbout} className={style.about}/>
-            </Link>
-            <Link to={"/home"}>
-                <img title='Mostrar cualquier tarjeta' src={imgRandom} onClick={() => onRandom()} className={style.random}/>
-            </Link>
-            <Link to={"/favorites"}>
-                <img title='Mis favoritos' src={imgFavoritos} className={style.favoritos}/>
-            </Link>
+            <div className={style.divAbout}>
+                <Link to={"/about"} >
+                    <img title='Informacion de esta App' src={imgAbout} className={style.about}/>
+                </Link>
+            </div>
+            <div className={style.divClearn}>
+                <Link to={"/home"}>
+                    <img title='Borrar todas las tarjetas' src={imgClearn} onClick={() => onClearn()} className={style.clearn}/>
+                </Link>
+            </div>
+            <div className={style.divHome}>
+                <Link to={"/home"}>
+                    <img title='Home' src={imgHome} className={style.home}/>
+                </Link>
+            </div>
+            <div className={style.divFavoritos}>
+                <Link to={"/favorites"}>
+                    <img title='Mis favoritos' src={imgFavoritos} className={style.favoritos}/>
+                </Link>
+            </div>
+            <div className={style.divRandom}>
+                <Link to={"/home"}>
+                    <img title='Mostrar cualquier tarjeta' src={imgRandom} onClick={() => onRandom()} className={style.random}/>
+                </Link>
+            </div>
         </div>
         <SearchBar onSearch={props.onSearch}/>
+        <div className={style.divLogOut}>
+            <img title='Cerrar sesion' src={imgLogOut} onClick={() => logOut()} className={style.logOut}/>
+        </div>
        </nav>
     )
 }

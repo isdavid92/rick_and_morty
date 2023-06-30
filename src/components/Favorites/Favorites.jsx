@@ -1,8 +1,10 @@
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 import Card from '../Card/Card';
-import style from './Favorites.module.css'
+import style from './Favorites.module.css';
 
-const Favorites = ({ myFavorites }) => {
+const Favorites = () => {
+    const myFavorites = useSelector(state => state.myFavorites );
+
     return <div className={style.divFav}>{
             myFavorites.map((per) => {
                 return (<Card
@@ -19,10 +21,4 @@ const Favorites = ({ myFavorites }) => {
         }</div>
 };
 
-const mapStateToProps = (state) => {
-    return {
-       myFavorites: state.myFavorites
-    }
- }
-
-export default connect(mapStateToProps)(Favorites)
+export default Favorites;

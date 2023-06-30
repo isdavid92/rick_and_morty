@@ -1,78 +1,106 @@
 .nav{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: rgba(246, 255, 0, 0.5);
-    border-radius: 2em;
-    width:60em;
-    height: 2.5em;
-    padding: 10px 30px 10px 10px;
-    margin: 20px 20px 0px 20px;
- }
- .divBotones {
-    transform: translateY(-17px);
- }
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   background-color: rgba(246, 255, 0, 0.5);
+   border-radius: 2em;
+   width:60em;
+   height: 2.5em;
+   padding: 10px 30px 10px 10px;
+   margin: 20px 20px 0px 20px;
+}
+.divBotones {
+   width: 93%;
+   display: flex;
+   justify-content: center;
+}
 
- .logOut {
-    width: 38px ;
-    position: absolute;
-    transform: translateX(-27.5em);
+.divAbout {
+   width: 20%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
 
-    &:hover {
-        width: 45px;
-    }
- }
+.about {
+   width: 38px ;
+   
+   &:hover {
+      width: 43px;
+   }
+}
+
+.divClearn {
+   width: 20%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
  
  .clearn {
     width: 40px ;
-    position: absolute;
-    transform: translateX(-22em) translateY(-2px);
-
+    
     &:hover {
         width: 45px;
-    }
- }
+      }
+   }
+   
+   .divHome {
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
 
- .home {
+   .home {
     width: 40px ;
-    position: absolute;
-    transform: translateX(-16.5em);
-
     
     &:hover {
-        width: 45px;
-    }
- }
+       width: 45px;
+      }
+   }
+   
+   .divFavoritos {
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
 
- .about {
-    width: 38px ;
-    position: absolute;
-    transform: translateX(-11em) translateY(-2px);
+   .favoritos {
+      width: 38px ;
+      
+      &:hover {
+         width: 43px;
+      }
+   }
 
-    
-    &:hover {
-        width: 43px;
-    }
- }
+   .divRandom {
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   .random {
+      width: 40px ;
+      
+      &:hover {
+         width: 45px;
+      }
+   }
+   
+   
+   .divLogOut {
+      width: 7%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
 
- .random {
-    width: 40px ;
-    position: absolute;
-    transform: translateX(-5.5em);
-
-    
-    &:hover {
-        width: 45px;
-    }
- }
-
- .favoritos {
-    width: 38px ;
-    position: absolute;
-    
-
-    
-    &:hover {
-        width: 43px;
-    }
- }
+   .logOut {
+      width: 38px ;
+   
+      &:hover {
+          width: 45px;
+      }
+   }

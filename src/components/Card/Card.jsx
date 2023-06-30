@@ -12,7 +12,7 @@ function Card(props) {
    const { pathname } = useLocation();
 
    useEffect(() => {
-      props.myFavorites.forEach(per => {
+      props.allCharacters.forEach(per => {
          if (per.id===props.id) setIsFav(true)
       })
    },[])
@@ -53,7 +53,7 @@ function Card(props) {
 
 const mapStateToProps = (state) => {
    return {
-      myFavorites: state.myFavorites
+      allCharacters: state.allCharacters
    }
 }
 

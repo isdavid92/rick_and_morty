@@ -9,7 +9,9 @@ import About from "./components/About/About";
 import axios from "axios";
 import { Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Error404 from './components/Error404/Error404';
-import Favorites from './components/Favorites/Favorites'
+import Favorites from './components/Favorites/Favorites';
+import { filterCards, orderCards } from './redux/actions';
+import { useDispatch } from 'react-redux';
 
 function App() {
    const { pathname } = useLocation();
@@ -19,6 +21,17 @@ function App() {
    const EMAIL = 'isdavid92@hotmail.com';
    const PASSWORD = 'admin123';
    const [ nombre, setNombre ] = useState('');
+   const dispatch = useDispatch();
+   const [ aux , setAux ] = useState(false);
+
+   const handleOrder = (event) => {
+      dispatch(orderCards(event.target.value));
+      setAux(!aux);
+   }
+
+   const handleFilter = (event) => {
+      dispatch(filterCards(event.target.value))
+   }
 
    const login = ({ email, password }) => {
       if (email===EMAIL && password===PASSWORD) {
@@ -90,7 +103,28 @@ function App() {
                   <Nav onSearch ={onSearch} onRandom={onRandom} onClearn={onClearn} onLogOut={logOut}/>
                </div>
                { pathname == '/home' && <h1 className={style.saludo}>¡ hola {nombre} !</h1> }
-               { pathname == '/favorites' && <h1 className={style.favoritos}>Mis favoritos:</h1> }
+               { pathname == '/favorites' && 
+                  <>
+                     <div className={style.divFavFil}>
+                        <h1 className={style.favoritos}>¡Mis favoritos!</h1>
+                        <div className={style.divFil}>
+                           <h2 className={style.filtrar}>Filtrar:</h2>
+                           <div className={style.divSelect}>
+                              <select className={style.selectGen} onChange={handleFilter}>
+                                 <option value='Male'>Male</option>
+                                 <option value='Female'>Female</option>
+                                 <option value='Genderless'>Genderless</option>
+                                 <option value='unknown'>Unknown</option>
+                              </select>
+                              <select className={style.selectPosi} onChange={handleOrder}>
+                                 <option value='A'>Ascendente</option>
+                                 <option value='B'>Descendente</option>
+                              </select>
+                           </div>
+                        </div>
+                     </div>
+                  </>
+               }
             </>
             }
          

@@ -1,12 +1,17 @@
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect} from "react";
-import { Link } from "react-router-dom";
 import style from "./Detail.module.css";
 
 function Detail () {
     const {id} = useParams();
     const [ charDetail, setCharDetail ] = useState({});
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(-1)
+    }
+
     useEffect(() => {
         axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
            if (data.name) {
@@ -17,15 +22,16 @@ function Detail () {
         });
         return setCharDetail({});
      }, [id]);
+
     return (
         <div className={style.detail}>
             <div>
                 <img className={style.img} src={charDetail.image} alt="" />
             </div>
             <div className={style.info}>
-                <Link className={style.close} to={"/home"}>
-                    <button className={style.boton}>X</button>
-                </Link>
+                <div className={style.close} to={"/home"}>
+                    <button className={style.boton} onClick={handleClick}>X</button>
+                </div>
                 <h1 className={style.id}>{charDetail.id}</h1>
                 <h1>{charDetail.name}</h1>
                 <h2>status: {charDetail.status}</h2>

@@ -11,21 +11,24 @@
  .Input {
     border-radius: 15px;
     background-color: rgb(161, 249, 249);
-    width: 10em;
-    transform: translateX(78px);
+    width: 9.5em;
+
+    transform: translateX();
+    
     font-family: idInput;
     font-size: 30px;
  }
 
  .Btn {
     border-radius: 0.9em;
-    padding: 0.8em;
+    padding: 0.6em;
     border: solid black 2.5px;
     background-color: #0420d4;
     color: white;
     font-weight: 700;
     font-size: 1em;
-    transform-style: preserve-3d;
+    position: absolute;
+    transform: translateX(-5.5em) translateY(4.5px);
     &:hover {
         background-color: #011387;
         cursor: pointer;

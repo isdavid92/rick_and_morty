@@ -19,9 +19,49 @@
    top: 11.5%;
 }
 
+.divFavFil {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+   height: max-content;
+   position: absolute;
+   top: 14%;
+}
+
 .favoritos {
+   color: yellow;
+   font-family: numeros;
+   margin:0%;
+}
+
+.divFil {
+   display: flex;
+   position: absolute;
+   right: 3%;
+   align-items: center;
+}
+
+.filtrar {
    color: white;
    font-family: numeros;
-   position: absolute;
-   top: 11.5%;
+   margin: auto;
+   margin-right: 1em;
+   height: min-content;
+}
+
+.selectGen {
+   margin-right: 1em;
+   font-family:cursive;
+   font-size: 120%;
+   font-weight: 700;
+   border-radius: 10px;
+}
+
+.selectPosi {
+   margin-right: 1em;
+   font-family:cursive;
+   font-size: 120%;
+   font-weight: 700;
+   border-radius: 10px;
 }
