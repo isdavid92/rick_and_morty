@@ -63,7 +63,7 @@ function App() {
         alert(`Ya existe el personaje con el id ${id}`);
         return;
       }
-     axios(`https://rickandmortyapi.com/api/character/${id}`)
+     axios(`http://localhost:3001/rickandmorty/character/${id}`)
      .then(({data}) => {
         if(data.name){
           setCharacters((oldChars)=> [data, ...oldChars])
