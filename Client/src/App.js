@@ -18,11 +18,10 @@ function App() {
    const navigate = useNavigate();
    const [ characters, setCharacters ] = useState([]);
    const [ access, setAccess ] = useState(false);
-   const EMAIL = 'isdavid92@hotmail.com';
-   const PASSWORD = 'admin123';
    const [ nombre, setNombre ] = useState('');
    const dispatch = useDispatch();
    const [ aux , setAux ] = useState(false);
+   const URL = 'http://localhost:3001/rickandmorty/';
 
    const handleOrder = (event) => {
       dispatch(orderCards(event.target.value));
@@ -34,12 +33,14 @@ function App() {
    }
 
    const login = ({ email, password }) => {
-      if (email===EMAIL && password===PASSWORD) {
-         setAccess(true);
-         navigate('/home');
+      axios(`${URL}login?email=${email}&password=${password}`)
+      .then(({data}) => {
+         const { access } = data;
+         setAccess(access);
+         access && navigate('/home');
          setNombre('Isra');
          setCharacters([])
-      }
+      })
    }
 
    const Invitado = () => {
@@ -77,7 +78,7 @@ function App() {
     function onRandom() {
       const idRandom = Math.floor(Math.random() * 826) + 1;
 
-      axios(`https://rickandmortyapi.com/api/character/${idRandom}`)
+      axios(`http://localhost:3001/rickandmorty/character/${idRandom}`)
      .then(({data}) => {
         if(data.name){
           setCharacters((oldChars)=> [data, ...oldChars])
