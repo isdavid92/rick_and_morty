@@ -32,15 +32,19 @@ function App() {
       dispatch(filterCards(event.target.value))
    }
 
-   const login = ({ email, password }) => {
-      axios(`${URL}login?email=${email}&password=${password}`)
-      .then(({data}) => {
+   const login = async ({ email, password }) => {
+      try {
+         const { data } = await axios(`${URL}login?email=${email}&password=${password}`);
          const { access } = data;
+
          setAccess(access);
          access && navigate('/home');
          setNombre('Isra');
          setCharacters([])
-      })
+      } catch ({ response }) {
+         const { data } = response;
+         alert(data.message)
+      }
    }
 
    const Invitado = () => {
@@ -58,32 +62,25 @@ function App() {
       setAccess(false);
    }
 
-   const onSearch = (id) => {
+   const onSearch = async (id) => {
       if(!id) alert('Ingresa un ID')
       if(characters.find(char => char.id === parseInt(id) )){
         alert(`Ya existe el personaje con el id ${id}`);
         return;
       }
-     axios(`http://localhost:3001/rickandmorty/character/${id}`)
-     .then(({data}) => {
-        if(data.name){
-          setCharacters((oldChars)=> [data, ...oldChars])
-        }
-     }).catch(
-      // err => alert(err.response.data.error)
-      err => alert('¡El personaje no existe!')
-      )
+      try {
+         const { data } = await axios(`${URL}character/${id}`);
+         setCharacters(oldChars => [data, ...oldChars])
+      } catch (error) {
+         alert(error.response.data)
+      }
     }
 
-    function onRandom() {
+    async function onRandom() {
       const idRandom = Math.floor(Math.random() * 826) + 1;
+      const { data } = await axios(`${URL}character/${idRandom}`);
 
-      axios(`http://localhost:3001/rickandmorty/character/${idRandom}`)
-     .then(({data}) => {
-        if(data.name){
-          setCharacters((oldChars)=> [data, ...oldChars])
-        }
-     })
+      setCharacters((oldChars)=> [data, ...oldChars])
     }
   
     function onClose(id){
