@@ -4,9 +4,9 @@ module.exports = (res, error) => {
     if (response){
         const { status, data } = response;
         const statusCode = status || 404;
-        const errrorMessage = data.error || "No existe el personaje";
+        const errorMessage = data.error || "No existe el personaje";
         
-        res.status(statusCode).send(errrorMessage)
+        res.status(statusCode).send(errorMessage)
     } else {
         res.status(500).send('Internal Server Error')
     }

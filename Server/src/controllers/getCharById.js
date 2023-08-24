@@ -1,5 +1,5 @@
 const axios = require('axios');
-const errorHandler = require('../utils/errors')
+const errorHandler = require('../utils/errors');
 const URL_BASE = 'https://rickandmortyapi.com/api/character/';
 
 const getCharById = async (req, res) => {
