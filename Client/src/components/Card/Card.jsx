@@ -34,7 +34,7 @@ function Card(props) {
             <div className={style.close}>
                {
                   isFav? <img src={imgFavDest} className={style.favDest} onClick={handleFavorite}/> : <img src={imgFavGris} className={style.favGris} onClick={handleFavorite}/>
-                  }
+               }
                {
                   pathname === '/home' && <button onClick={()=> onClose(props.id)} className={style.boton}> <strong>X</strong></button>
                }

@@ -59,4 +59,4 @@ const Form = ({ login, Invitado }) => {
     )
 };
 
-export default Form;
+export default Form
