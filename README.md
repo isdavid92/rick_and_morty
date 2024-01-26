@@ -1,9 +1,13 @@
 App Rick and Morty
 
-Antes que nada ejecutar "npm install" en ambas carpetas
+Seguir estos pasos para abrir la App:
 
-para iniciar Client: npm start
-para iniciar Server: npm start
+* Antes que nada ejecutar "npm install" en ambas carpetas
 
-Base de datos postgres con el nombre "rickandmorty"
+* para iniciar Client: npm start
+* para iniciar Server: npm start
+
+* En la landing ingresa como invitado
+
+* Base de datos postgres con el nombre "rickandmorty"
 
